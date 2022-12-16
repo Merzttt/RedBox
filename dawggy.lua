@@ -613,7 +613,7 @@ Main:AddButton("ESP", function()
 	local function onPlayerAdded(player: Player)
 	-- Creates Highlight:
 	local highlight = Instance.new("Highlight")
-	highlight.FillColor = player.TeamColor.Color
+	highlight.FillColor = Color3.fromRGB(255, 0, 0)
 	highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 	highlight.RobloxLocked = true
 	ProtectInstance(highlight)
