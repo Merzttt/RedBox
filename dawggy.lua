@@ -445,13 +445,12 @@ local ExploitBox = GeneralExploitsTab:AddRightTabbox("Spawn Menu") do
     
     Main:AddToggle('GSpam', {
 		Text = 'Grenade Spam',
-		Default = false, -- Default value (true / false)
-		Tooltip = "Must be holding Frag Grenade.", -- Information shown when you hover over the toggle
+		Default = false,
+		Tooltip = "Must be holding Frag Grenade.",
 	})
     
 	
 	Toggles.GSpam:OnChanged(function()
-    -- here we get our toggle object & then get its value
 		print('Spam Grenades:', Toggles.GSpam.Value)
 		
 		_G.GS = Toggles.GSpam.Value
@@ -467,11 +466,10 @@ local ExploitBox = GeneralExploitsTab:AddRightTabbox("Spawn Menu") do
 				}
 
 				game:GetService("ReplicatedStorage").Assets.Remotes.throwGrenade:FireServer(unpack(args))
-				end
+			end
 			end
 			wait()
 		end
-		wait()
 	end)
 end
 
