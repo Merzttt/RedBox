@@ -470,6 +470,7 @@ local ExploitBox = GeneralExploitsTab:AddRightTabbox("Spawn Menu") do
 				end
 			end
 		end
+		wait()
 	end)
 end
 
