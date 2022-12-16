@@ -454,7 +454,7 @@ local ExploitBox = GeneralExploitsTab:AddRightTabbox("Spawn Menu") do
     -- here we get our toggle object & then get its value
 		print('Spam Grenades:', Toggles.GSpam.Value)
 		
-		_G.GS = Toggles.CuffAura.Value
+		_G.GS = Toggles.GSpam.Value
 		
 		while _G.GS do
  
