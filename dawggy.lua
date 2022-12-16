@@ -63,7 +63,7 @@ mouse_box.Visible = true
 mouse_box.ZIndex = 999 
 mouse_box.Color = Color3.fromRGB(54, 57, 241)
 mouse_box.Thickness = 20 
-mouse_box.Size = Vector2.new(20, 20)
+mouse_box.Size = Vector2.new(5, 5)
 mouse_box.Filled = true 
 
 local fov_circle = Drawing.new("Circle")
