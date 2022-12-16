@@ -407,15 +407,16 @@ local ExploitBox = GeneralExploitsTab:AddLeftTabbox("Exploits") do
 		
 		while _G.Cuff do
  
-		for i,v in pairs(game.Players:GetChildren()) do
-			if v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("Arrested").Value == false then
-				local args = {
-					[1] = v.Character
-				}
-				 
-				game:GetService("ReplicatedStorage").Assets.Remotes.cuffsArrest:FireServer(unpack(args))
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if v and v.Character and v.Character:FindFirstChild("Head") then
+				if v.Name ~= game.Players.LocalPlayer.Name and v.Character:FindFirstChild("Arrested").Value == false then
+					local args = {
+						[1] = v.Character
+					}
+					 
+					game:GetService("ReplicatedStorage").Assets.Remotes.cuffsArrest:FireServer(unpack(args))
+					end
 				end
-			end
 			wait()
 		end
 	end)
