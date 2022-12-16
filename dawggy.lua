@@ -678,29 +678,27 @@ Main:AddButton("Server Hop", function()
 	local httpservice = game:GetService('HttpService')
 	queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Merzttt/dawg/main/dawggy.lua'))()")
 	
-	local gameId = "8737602449"
-    if vcEnabled and getgenv().settings.vcServer then
-        gameId = "8943844393"
-    end
-    local servers = {}
-    local req = httprequest({Url = "https://games.roblox.com/v1/games/".. gameId.."/servers/Public?sortOrder=Desc&limit=100"})
-   	local body = httpservice:JSONDecode(req.Body)
-    if body and body.data then
-        for i, v in next, body.data do
-   	        if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.playing > 10 then
-  		        table.insert(servers, 1, v.id)
- 	        end 
-        end
-    end
-    if #servers > 0 then
-		game:GetService("TeleportService"):TeleportToPlaceInstance(gameId, servers[math.random(1, #servers)], Players.LocalPlayer)
-    end
-    game:GetService("TeleportService").TeleportInitFailed:Connect(function()
-        game:GetService("TeleportService"):TeleportToPlaceInstance(gameId, servers[math.random(1, #servers)], Players.LocalPlayer)
-    end)
+    local Http = game:GetService("HttpService")
+	local TPS = game:GetService("TeleportService")
+	local Api = "https://games.roblox.com/v1/games/"
 
-end)
-    
+	local _place = game.PlaceId
+	local _servers = Api.._place.."/servers/Public?sortOrder=Desc&limit=100"
+	function ListServers(cursor)
+	   local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+	   return Http:JSONDecode(Raw)
+	end
+
+	local Server, Next; repeat
+	   local Servers = ListServers(Next)
+	   Server = Servers.data[1]
+	   Next = Servers.nextPageCursor
+	until Server
+
+	TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
+
+	end)
+		
     
     Main:AddButton("Unload", function()
         
