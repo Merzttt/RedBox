@@ -419,9 +419,9 @@ local ExploitBox = GeneralExploitsTab:AddLeftTabbox("Exploits") do
 				end
 			wait()
 		end
-	end)
+	end
+end)
 end
-	
 
 local ExploitBox = GeneralExploitsTab:AddRightTabbox("Spawn Menu") do 
     local Main = ExploitBox:AddTab("Spawn Menu")
