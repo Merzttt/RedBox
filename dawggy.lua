@@ -469,6 +469,7 @@ local ExploitBox = GeneralExploitsTab:AddRightTabbox("Spawn Menu") do
 				game:GetService("ReplicatedStorage").Assets.Remotes.throwGrenade:FireServer(unpack(args))
 				end
 			end
+			wait()
 		end
 		wait()
 	end)
