@@ -607,7 +607,7 @@ local PlayerBox = GeneralPlayerTab:AddLeftTabbox("Main") do
     })
     Options.HitChance:OnChanged(function()
     	
-		local amount = FOVSlider.ValueValue
+		local amount = FOVSlider.Value
 
 		game:GetService'Workspace'.Camera.FieldOfView = amount
 		
