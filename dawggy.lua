@@ -595,6 +595,24 @@ local PlayerBox = GeneralPlayerTab:AddLeftTabbox("Main") do
 		game:GetService("Players").LocalPlayer.Character.Arrested.Value = false
         
 	end)
+	
+	Main:AddSlider('FOVSlider', {
+        Text = 'FOV Changer',
+        Default = 70,
+        Min = 70,
+        Max = 120,
+        Rounding = 1,
+    
+        Compact = false,
+    })
+    Options.HitChance:OnChanged(function()
+    	
+		local amount = FOVSlider.ValueValue
+
+		game:GetService'Workspace'.Camera.FieldOfView = amount
+		
+    end)
+	
 end
 
 local VisualsBox = GeneralVisualsTab:AddLeftTabbox("Visuals") do 
