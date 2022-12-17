@@ -589,6 +589,32 @@ local PlayerBox = GeneralPlayerTab:AddLeftTabbox("Main") do
 			game:GetService("ReplicatedStorage").AddTool:FireServer(unpack(args))
         
 	end)
+	
+	Main:AddToggle('AntiArrest', {
+		Text = 'Anti Arrest',
+		Default = false,
+		Tooltip = "Must have enabled before being arrested.",
+	})
+    
+	
+	Toggles.AntiArrest:OnChanged(function()
+		print('Anti Arrest:', Toggles.AntiArrest.Value)
+		
+		_G.AA = Toggles.AntiArrest.Value
+		
+		while _G.AA do
+			
+			local Players = game:GetService("Players")
+			Players.LocalPlayer.Character.Arrested.Changed:Connect(function(v)
+				if v and Toggles.AntiArrest.Value then
+					wait(0.1)
+					Players.LocalPlayer.Character:FindFirstChild("Arrested").Value = false
+				end
+			end)
+			wait()
+		end
+	end)
+	wait()
 end
 
 local VisualsBox = GeneralVisualsTab:AddLeftTabbox("Visuals") do 
