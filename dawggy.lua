@@ -609,6 +609,38 @@ local Main = Teleports:AddTab("Teleports")
 	character.HumanoidRootPart.CFrame = CFrame.new(-20.9391174, 104.704521, -301.2724, 0.999983251, -3.63300714e-08, 0.00579067506, 3.55516221e-08, 1, 1.34534048e-07, -0.00579067506, -1.34325916e-07, 0.999983251)
 
 end)
+
+	Main:AddButton("Teleport Farm", function()
+	
+	local plr = game:GetService("Players").LocalPlayer
+	local character = plr.Character
+	
+	character.HumanoidRootPart.CFrame = CFrame.new(-76.0004807, 164.152695, -829.835693, -0.999944568, 4.59734162e-09, 0.0105311209, 3.46335916e-09, 1, -1.07697417e-07, -0.0105311209, -1.07654969e-07, -0.999944568)
+end)
+
+	Main:AddButton("Teleport Shop", function()
+	
+	local plr = game:GetService("Players").LocalPlayer
+	local character = plr.Character
+	
+	character.HumanoidRootPart.CFrame = CFrame.new(190.336609, 164.23999, -273.42865, -0.0068814056, -9.67158584e-08, 0.999976337, 3.10456159e-08, 1, 9.69317924e-08, -0.999976337, 3.17119095e-08, -0.0068814056)
+end)
+
+	Main:AddButton("Teleport Outside Subway", function()
+	
+	local plr = game:GetService("Players").LocalPlayer
+	local character = plr.Character
+	
+	character.HumanoidRootPart.CFrame = CFrame.new(160.844803, 164.240723, -461.791656, 0.0122261178, 5.50175372e-08, 0.999925256, -4.5753616e-08, 1, -5.44622161e-08, -0.999925256, -4.50843345e-08, 0.0122261178)
+end)
+
+	Main:AddButton("Teleport Subway", function()
+	
+	local plr = game:GetService("Players").LocalPlayer
+	local character = plr.Character
+	
+	character.HumanoidRootPart.CFrame = CFrame.new(161.930481, 136.839996, -505.417511, 0.012924416, -1.07781588e-07, -0.999916494, -7.46766062e-08, 1, -1.08755827e-07, 0.999916494, 7.60759704e-08, 0.012924416)
+end)
 end
 
 
