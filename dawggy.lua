@@ -248,6 +248,7 @@ local GeneralTab = Window:AddTab("Aimbot")
 local GeneralExploitsTab = Window:AddTab("Exploits")
 local GeneralVisualsTab = Window:AddTab("Visuals")
 local GeneralPlayerTab = Window:AddTab("Player")
+local GeneralTeleportsTab = Window:AddTab("Teleports")
 local GeneralMapTab = Window:AddTab("Map")
 local GeneralMiscTab = Window:AddTab("Misc")
 local MainBOX = GeneralTab:AddLeftTabbox("Main") do
@@ -596,6 +597,21 @@ local PlayerBox = GeneralPlayerTab:AddLeftTabbox("Main") do
         
 	end)
 end
+
+local Teleports = GeneralTeleportsTab:AddLeftTabbox("Teleports") do 
+local Main = Teleports:AddTab("Teleports")
+
+	Main:AddButton("Teleport Sewers", function()
+	
+	local plr = game:GetService("Players").LocalPlayer
+	local character = plr.Character
+	
+	character.HumanoidRootPart.CFrame = CFrame.new(-20.9391174, 104.704521, -301.2724, 0.999983251, -3.63300714e-08, 0.00579067506, 3.55516221e-08, 1, 1.34534048e-07, -0.00579067506, -1.34325916e-07, 0.999983251)
+
+end)
+end
+
+
 
 local VisualsBox = GeneralVisualsTab:AddLeftTabbox("Visuals") do 
 local Main = VisualsBox:AddTab("Visuals")
